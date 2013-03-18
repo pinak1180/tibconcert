@@ -4,6 +4,8 @@ require 'rails/all'
 require 'fb_graph'
 require 'devise'
 require 'paperclip'
+require 'geocoder'
+
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line

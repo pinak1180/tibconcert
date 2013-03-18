@@ -19,6 +19,7 @@ group :assets do
   gem 'annotate', ">=2.5.0"
   gem "paperclip", "~> 3.0"
   gem 'bootstrap-sass', '2.1'
+  gem "twitter-bootstrap-rails"
 
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

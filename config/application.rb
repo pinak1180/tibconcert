@@ -5,6 +5,7 @@ require 'fb_graph'
 require 'devise'
 require 'paperclip'
 require 'geocoder'
+require 'twitter-bootstrap-rails'
 
 
 if defined?(Bundler)

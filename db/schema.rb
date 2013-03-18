@@ -13,6 +13,12 @@
 
 ActiveRecord::Schema.define(:version => 20130316061617) do
 
+  create_table "admins", :force => true do |t|
+    t.string   "role"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "authentication_tokens", :force => true do |t|
     t.string   "auth_token"
     t.datetime "created_at", :null => false
@@ -72,7 +78,6 @@ ActiveRecord::Schema.define(:version => 20130316061617) do
     t.integer  "latitude"
     t.integer  "longitude"
     t.string   "fb_auth_token"
-    t.string   "fan_type"
     t.string   "type"
   end
 

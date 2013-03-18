@@ -1,0 +1,25 @@
+class Fan < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :lockable, :timeoutable and :activatable
+  devise :database_authenticatable, :registerable, :confirmable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation,:city, :country, :dob, :fan_name, :first_name, :last_name,:zip,:fb_auth_token,:fan_type
+  # attr_accessible :title, :body
+  has_many :authentication_tokens
+  #validates_presence_of :city,:country,:fan_name,:first_name, :last_name,:zip
+   def display_errors
+    self.errors.full_messages.join(', ')
+  end
+  
+  def self.authenticate_member_with_auth(email, password)
+    return nil unless email.present? or password.present?
+    m = Fan.where(:email => email)
+    (m.present? && m.first.valid_password?(password))? m : nil
+  end
+
+  def self.invalid_credentials
+    "Email or Password is not valid"
+  end
+end

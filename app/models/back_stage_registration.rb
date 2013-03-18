@@ -1,0 +1,15 @@
+# == Schema Information
+#
+# Table name: back_stage_registrations
+#
+#  id            :integer          not null, primary key
+#  email         :string(255)
+#  fb_auth_token :string(255)
+#  type          :string(255)
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+class BackStageRegistration < ActiveRecord::Base
+  attr_accessible :email, :fb_auth_token, :type
+end

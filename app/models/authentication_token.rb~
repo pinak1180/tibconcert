@@ -1,0 +1,11 @@
+class AuthenticationToken < ActiveRecord::Base
+  attr_accessible :auth_token
+  belongs_to :fan
+   def self.generate_unique_token
+    token = SecureRandom.hex(20)
+    if Fan.where(:auth_token => token).count > 1
+      token = SecureRandom.hex(20)
+    end
+    token
+  end
+end

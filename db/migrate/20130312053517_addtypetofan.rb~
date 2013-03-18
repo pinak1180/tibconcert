@@ -1,0 +1,3 @@
+class Addtypetofan < ActiveRecord::Migration
+  add_column :fans, :_type, :string
+end

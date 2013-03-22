@@ -19,6 +19,7 @@ TibConcert::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+ 
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
@@ -49,7 +50,7 @@ TibConcert::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+   config.action_mailer.raise_delivery_errors = false
 
   # Enable threaded mode
   # config.threadsafe!
